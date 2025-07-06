@@ -1,0 +1,151 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.contact-section {
+  font-family: 'Crimson Text', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include content-padding-inline;
+  padding-block: 35px 75px;
+  background: linear-gradient(to bottom, $bg-color 70%, $bg-color-2 30%); 
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    padding-block: 80px;
+    background: linear-gradient(to right, $bg-color 70%, $bg-color-2 30%);
+
+  }
+
+  @include desktop {
+    gap: 120px;
+    padding-block: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+.contact-form-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 50px;
+
+  @include tablet {
+    align-items: flex-start;
+    margin-bottom: 0;
+    max-width: 500px;
+    flex-shrink: 0; 
+  }
+
+  @include desktop {
+    max-width: 550px;
+  }
+}
+
+.contact-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center; 
+
+  @include tablet {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: left; 
+  }
+
+  @include desktop {
+    font-size: 45px;
+    margin-bottom: 50px;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  gap: 20px;
+}
+
+.contact-input,
+.contact-textarea {
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 5px solid $button-color;
+  font-size: 16px;
+  line-height: 1.5;
+  outline: none;
+  background-color: $text-btn-color; 
+}
+
+.contact-textarea {
+  min-height: 120px;
+
+  @include tablet {
+    min-height: 100px;
+  }
+
+  @include desktop {
+    min-height: 130px;
+  }
+}
+
+.contact-submit-button {
+  background-color: $button-color;
+  font-family: 'Crimson Text', serif;
+  color: $text-btn-color;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; 
+  margin-bottom: 70px; 
+
+  &:hover {
+    background-color: darken($button-color, 10%);
+  }
+
+  @include tablet {
+    padding: 18px 40px;
+    font-size: 20px;
+  }
+}
+
+.contact-image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+
+  @include tablet {
+    width: 100%;
+    align-self: center; 
+  }
+}
+
+.contact-image-wrapper {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  transform: translateX(-20px); 
+
+  @include tablet {
+    transform: translateX(0); 
+  }
+}
+
+.contact-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

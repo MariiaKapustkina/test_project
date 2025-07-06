@@ -1,0 +1,88 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.gallery-section {
+  margin: 0;
+  text-align: center;
+  background-color: $text-btn-color;
+  width: 100vw;
+}
+
+.gallery-title {
+  font-family: 'Crimson Text', serif;
+  padding-top: 19px;
+  padding-bottom: 25px;
+  margin: 0;
+
+  @include tablet {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+
+  @include desktop {
+    padding-top: 60px;
+    padding-bottom: 78px;
+  }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  @include tablet {
+    gap: 13px;
+  }
+
+  @include desktop {
+    gap: 18px;
+    margin-bottom: 13px;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background-color: $text-btn-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .gallery-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .gallery-image {
+    transform: scale(1.05);
+  }
+}
+
+.gallery-item-small {
+  height: 200px;
+
+  @include tablet {
+    height: 270px;
+  }
+
+  @include desktop {
+    height: 380px;
+  }
+}
+
+.gallery-item-large {
+  height: 90px;
+
+  @include tablet {
+    height: 190px;
+  }
+
+  @include desktop {
+    grid-column: span 4;
+    height: 260px;
+  }
+}

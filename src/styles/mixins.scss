@@ -1,0 +1,24 @@
+@mixin tablet {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop{
+  @media (min-width: 1400px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 24px;
+
+
+  @include tablet {
+    padding-inline: 50px;
+  }
+
+  @include desktop {
+    padding-inline: 140px;
+  }
+}
